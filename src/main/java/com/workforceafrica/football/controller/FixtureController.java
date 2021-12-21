@@ -23,9 +23,9 @@ public class FixtureController {
        return fixtureRepository.getFixturePlayed(id);
     }
 
-    @GetMapping("/futurefixtures")
-    List<Fixture> fixtureFuture() {
-       return fixtureRepository.getFutureFixtures();
+    @GetMapping("/team/{id}/futurefixtures")
+    List<Fixture> fixtureFuture(@PathVariable Long id) {
+       return fixtureRepository.getFutureFixtures(id);
     }
 
 }

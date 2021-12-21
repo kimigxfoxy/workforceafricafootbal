@@ -16,8 +16,8 @@ public interface FixtureRepository extends JpaRepository<Fixture, Long> {
     List<Fixture> getFixturePlayed(@Param("teamId") Long teamId);
 
     @Query(
-            value = "SELECT F.* FROM FIXTURE F WHERE F.played = 0",
+            value = "SELECT F.* FROM FIXTURE F WHERE F.played = 0 and (F.team_home_id=:teamId OR F.team_away_id=:teamId)",
             nativeQuery = true)
-    List<Fixture> getFutureFixtures();
+    List<Fixture> getFutureFixtures(@Param("teamId") Long teamId);
 
 }

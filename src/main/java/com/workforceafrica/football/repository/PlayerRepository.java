@@ -19,4 +19,6 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
             nativeQuery = true)
     List<Player> playersInTeamInjuryStatus(@Param("teamId") Long teamId);
 
+
+
 }
